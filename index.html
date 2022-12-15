@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Enter name to get avatar</h1>
+      <div class="card-body">
+        <input type="text" name="name" id="name" /><br />
+        <img src="avatar.svg" alt="avatar" /><br />
+        <input type="button" name="submit" id="click" value="click here" />
+      </div>
+    </div>
+    <!-- jquery ----------------------------------- -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#click").click(function () {
+          $name = $("#name").val();
+          console.log($name);
+          $("img").attr(
+            "src",
+            `https://avatars.dicebear.com/api/personas/${$name}.svg`
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
